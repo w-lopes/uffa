@@ -1,0 +1,42 @@
+#!/usr/bin/env php
+<?php
+
+require_once "core" . DIRECTORY_SEPARATOR . "init.php";
+
+use core\Bases\Command;
+use core\Utils\Normalizer;
+
+call_user_func(function() {
+    global $argv;
+
+    $params = $argv;
+    array_shift($params);
+
+    $callable = explode(":", ($params[0] ?? ""));
+    array_shift($params);
+
+    $class     = Normalizer::className($callable[0] ?: "help");
+    $method    = Normalizer::methodName($callable[1] ?? "run");
+    $namespace = file_exists(PATH_COMMANDS . "{$class}.php")
+        ? "core\\Commands\\"
+        : "custom\\Commands\\";
+
+    try {
+        $className = $namespace . $class;
+        $instance  = new $className();
+    } catch (\Exception $e) {
+        Command::error("Command not found!", true);
+    }
+    
+    if (!method_exists($instance, $method)) {
+        Command::error("Command not found!", true);
+    }
+
+    try {
+        call_user_func_array([$instance, $method], $params);
+    } catch (\ArgumentCountError $e) {
+        Command::error("Didn't you forget any argument?", true);
+    }
+
+    unset($instance);
+});

@@ -1,0 +1,21 @@
+<?php
+
+namespace custom\Models;
+
+use core\Bases\Model as BaseModel;
+
+/**
+ * Model {$name}.
+ */
+class {$name} extends BaseModel
+{
+
+    /**
+     * Primary key of {$name}.
+     * 
+     * @primary
+     * @id
+     * @get
+     */
+    public $id;
+}

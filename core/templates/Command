@@ -1,0 +1,20 @@
+<?php
+
+namespace custom\Commands;
+
+use core\Bases\Command as BaseCommand;
+
+/**
+ * {$name}.
+ */
+class {$name} extends BaseCommand
+{
+
+    /**
+     * Default method.
+     */
+    public function run()
+    {
+        self::info("My custom command");
+    }
+}
