@@ -18,4 +18,4 @@ define("PATH_TEMPLATES", PATH_CORE . "templates" . DS);
 // Custom path
 define("PATH_CUSTOM", PATH_BASE . "custom" . DS);
 define("PATH_CUSTOM_COMMANDS", PATH_CUSTOM . "Commands" . DS);
-define("PATH_CUSTOM_MODELS", PATH_CUSTOM . "Models" . DS);
+define("PATH_CUSTOM_RESOURCES", PATH_CUSTOM . "Resources" . DS);

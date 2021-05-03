@@ -9,6 +9,11 @@ class Normalizer
 {
 
     /**
+     * @var string Pattern to split class/method name
+     */
+    const PREG_SPLIT = "/[^a-zA-Z0-9]/";
+
+    /**
      * Normalize class name.
      * 
      * @param string $name Raw class name
@@ -16,7 +21,7 @@ class Normalizer
      */
     public static function className(string $name): string
     {
-        $pieces = preg_split("/[^a-zA-Z0-9]/", $name);
+        $pieces = preg_split(Normalizer::PREG_SPLIT, $name);
         array_walk($pieces, function (&$item) {
             $item = ucfirst($item);
         });
@@ -31,7 +36,7 @@ class Normalizer
      */
     public static function methodName(string $name): string
     {
-        $pieces = preg_split("/[^a-zA-Z0-9]/", $name);
+        $pieces = preg_split(Normalizer::PREG_SPLIT, $name);
         $first  = strtolower(array_shift($pieces));
         array_walk($pieces, function (&$item) {
             $item = ucfirst(strtolower($item));

@@ -3,9 +3,9 @@
 namespace core\Bases;
 
 /**
- * Base class for models.
+ * Base class for resources.
  */
-abstract class Model
+abstract class Resource
 {
 
     /**

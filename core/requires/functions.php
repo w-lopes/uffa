@@ -7,6 +7,9 @@
  */
 function dd(...$params)
 {
+    if (!CLI) {
+        echo "<pre>";
+    }
     var_dump(...$params);
     die;
 }

@@ -74,7 +74,7 @@ class Classes
         $parameters = $reflection->getParameters();
 
         foreach ($parameters as &$parameter) {
-            $parameter = self::getParameterAttrs($reflection, $parameter);
+            $parameter = self::getParameterAttrs($parameter);
         }
 
         return $parameters;
@@ -83,11 +83,10 @@ class Classes
     /**
      * Parse parameter attributes.
      * 
-     * @param ReflectionMethod $reflection Class reflection
      * @param ReflectionParameter $parameter Parameter to parse
      * @return stdClass Parameter's attributes
      */
-    private static function getParameterAttrs(ReflectionMethod $reflection, ReflectionParameter $parameter): stdClass
+    private static function getParameterAttrs(ReflectionParameter $parameter): stdClass
     {
         $type     = $parameter->getType();
         $optional = $parameter->isOptional();

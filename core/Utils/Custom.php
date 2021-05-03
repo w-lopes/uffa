@@ -9,13 +9,13 @@ class Custom
 {
 
     /**
-     * Check if model path exists before create it.
+     * Check if resource path exists before create it.
      * 
      * @return bool If exists or created
      */
-    public static function mkdirModel()
+    public static function mkdirResource()
     {
-        return self::mkdir(PATH_CUSTOM_MODELS);
+        return self::mkdir(PATH_CUSTOM_RESOURCES);
     }
 
     /**

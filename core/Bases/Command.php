@@ -27,7 +27,7 @@ abstract class Command
     public function __destruct()
     {
         $this->removeEmptyPath(PATH_CUSTOM_COMMANDS);
-        $this->removeEmptyPath(PATH_CUSTOM_MODELS);
+        $this->removeEmptyPath(PATH_CUSTOM_RESOURCES);
         $this->removeEmptyPath(PATH_CUSTOM);
     }
 

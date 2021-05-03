@@ -5,14 +5,13 @@ namespace core\Web;
 use core\Utils\Normalizer;
 use Exception;
 use ReflectionClass;
-use ReflectionNamedType;
 
 class Index
 {
 
     public $uri = [];
 
-    public $model;
+    public $resource;
 
     public $method = "";
 
@@ -22,39 +21,27 @@ class Index
 
     public function __construct($uri)
     {
-        $this->uri    = explode("/", trim($uri ?? "", "/"));
-        $this->method = array_shift($this->uri);
-        $this->model  = Normalizer::className(array_shift($this->uri) ?? "");
+        $this->uri      = explode("/", trim($uri ?? "", "/"));
+        $this->method   = array_shift($this->uri);
+        $this->resource = Normalizer::className(array_shift($this->uri) ?? "");
 
-        try {
-            $className        = "\\custom\\Models\\{$this->model}";
-            $this->model      = new $className();
-            $this->reflection = new ReflectionClass($className);
-            $this->getAttributes();
-        } catch (Exception $e) {
-            Response::error();
+        if (!method_exists($this, $this->method)) {
+            Response::notFound();
         }
-    }
 
-    public function api()
-    {
-        dd("api", $this->uri);
+        $this->{$this->method}();
     }
 
     public function doc()
     {
-        dd("doc", $this->uri);
+        $fetched = Route::fetch();
+        $fetched; // Used inside template only
+        include PATH_TEMPLATES . "Doc";
+        exit;
     }
 
-    private function getAttributes()
+    public function api()
     {
-        dd($this->reflection->getMethods());
-        // dd($this->reflection->getProperty("id")->getDocComment());
-        // dd($this->reflection->getProperties());
-        // $attributes = $this->reflection->getAttributes();
-
-        // foreach ($attributes as $attribute) {
-        //    dd($attribute);
-        // }
+        dd("TODO", "api", $this->uri);
     }
 }

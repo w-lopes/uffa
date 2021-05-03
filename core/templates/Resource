@@ -1,0 +1,27 @@
+<?php
+
+namespace custom\Resource;
+
+use core\Traits\Resource\Get;
+use core\Web\Api;
+use core\Web\Route;
+use core\Bases\Resource as BaseResource;
+
+/**
+ * Resource {$name}.
+ */
+#[Route(base: "/{$machine}")]
+class {$name} extends BaseResource
+{
+
+    use Get;
+
+    /**
+     * {$name}'s primary key.
+     */
+    #[Api(
+        type: "id",
+        method: ["get"]
+    )]
+    public $id;
+}
