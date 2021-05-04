@@ -38,7 +38,8 @@ class Route
             $current    = $namespace . str_replace(".php", "", $class->getFilename());
             $reflection = new ReflectionClass($current);
             $base       = self::getBaseRoute($reflection);
-            $parsed     = self::getMethodsRoute($base, $reflection);
+            $parsed     = self::getMethodsRoute($base, $reflection)
+                + ["attributes" => self::getApiProperties($reflection)];
 
             $result[$base] = $parsed;
         }
@@ -91,5 +92,22 @@ class Route
         }
 
         return $routes;
+    }
+
+    private static function getApiProperties(ReflectionClass $reflection): array
+    {
+        $ret   = [];
+        $props = $reflection->getProperties();
+
+        foreach ($props as $prop) {
+
+            $attributes = $prop->getAttributes();
+            foreach ($attributes as $attribute) {
+                $arguments = $attribute->getArguments();
+                $ret[$prop->getName()] = $arguments;
+            }
+        }
+
+        return $ret;
     }
 }

@@ -11,7 +11,26 @@
     <?php foreach ($fetched as $base => $routes): ?>
         <h3><?= $base ?></h3>
         <ul>
+            <?php if (isset($routes["attributes"])): ?>
+                <h4>Attributes</h4>
+                <ul>
+                <?php foreach ($routes["attributes"] as $name => $attributes): ?>
+                    <li>
+                        <h5><?= $name ?></h5>
+                        <p>
+                            <b>Type:</b>
+                            <span><?= $attributes["type"] ?></span>
+                        </p>
+                        <p>
+                            <b>Allowed http methods:</b>
+                            <span><?= implode(", ", $attributes["method"]) ?></span>
+                        </p>
+                    </li>
+                <?php endforeach; ?>
+                </ul>
+            <?php endif; ?>
             <?php foreach ($routes as $uri => $attributes): ?>
+                <?php if ($uri === "attributes") continue; ?>
                 <li>
                     <h4><?= $uri ?></h4>
                     <p><b>HTTP Method:</b> <?= implode(", ", $attributes["http"]) ?></p>

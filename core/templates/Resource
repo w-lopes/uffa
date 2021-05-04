@@ -1,6 +1,6 @@
 <?php
 
-namespace custom\Resource;
+namespace custom\Resources;
 
 use core\Traits\Resource\Get;
 use core\Web\Api;
