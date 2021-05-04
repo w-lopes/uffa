@@ -7,11 +7,21 @@
  */
 function dd(...$params)
 {
+    dump(...$params);
+    die;
+}
+
+/**
+ * Simple dump function.
+ *
+ * @param mixed ...$params Anything
+ */
+function dump(...$params)
+{
     if (!CLI) {
         echo "<pre>";
     }
     var_dump(...$params);
-    die;
 }
 
 /**
