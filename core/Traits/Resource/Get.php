@@ -13,11 +13,11 @@ trait Get
 
     /**
      * Get an record by its ID.
-     * 
-     * @param Uuid|null $id Record's ID
+     *
+     * @param Uuid|int $id Record's ID
      */
     #[Route(uri: "/get/{id?}", method: ["get"])]
-    public function get(Uuid|null $id = null)
+    public function get(Uuid|int $id = null)
     {
         dd("Get method '{$id}'");
     }

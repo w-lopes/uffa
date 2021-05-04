@@ -5,7 +5,7 @@ require_once ".." . DIRECTORY_SEPARATOR . "core" . DIRECTORY_SEPARATOR . "init.p
 use core\Web\Index;
 use core\Web\Response;
 
-call_user_func(function() {
+call_user_func(function () {
 
     $index = new Index($_SERVER["REQUEST_URI"] ?? "");
 

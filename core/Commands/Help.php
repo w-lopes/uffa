@@ -55,7 +55,7 @@ class Help extends Command
 
     /**
      * Get command classes of core.
-     * 
+     *
      * @return string[] Array of classes
      */
     private function iterateCore(): array
@@ -65,7 +65,7 @@ class Help extends Command
 
     /**
      * Get command classes of custom.
-     * 
+     *
      * @return string[] Array of classes
      */
     private function iterateCustom(): array
@@ -75,7 +75,7 @@ class Help extends Command
 
     /**
      * Get classes name from path.
-     * 
+     *
      * @param string $path Prefix of class namespace
      * @param string $path Path to iterate
      * @return string[] Array of classes
@@ -87,7 +87,7 @@ class Help extends Command
             return $classes;
         }
         foreach (new \DirectoryIterator($path) as $class) {
-            if(!$class->isFile()) {
+            if (!$class->isFile()) {
                 continue;
             }
     

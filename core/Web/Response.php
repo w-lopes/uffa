@@ -18,7 +18,7 @@ class Response
 
     /**
      * Send a response to browser.
-     * 
+     *
      * @param mixed $data Any data
      */
     public static function send($data): void
@@ -33,7 +33,7 @@ class Response
 
     /**
      * Send a response with an error message.
-     * 
+     *
      * @param string $message Error message
      * @param int $code Http response code
      */

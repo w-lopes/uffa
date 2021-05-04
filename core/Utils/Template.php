@@ -10,7 +10,7 @@ class Template
 
     /**
      * Load a template and replace its variables.
-     * 
+     *
      * @param string $tempate Template's fle name
      * @param string[] $data Associative array with its variables
      * @return string Parsed template

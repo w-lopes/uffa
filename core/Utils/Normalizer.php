@@ -15,7 +15,7 @@ class Normalizer
 
     /**
      * Normalize class name.
-     * 
+     *
      * @param string $name Raw class name
      * @return string Normalized class name
      */
@@ -30,7 +30,7 @@ class Normalizer
 
     /**
      * Normalize method name.
-     * 
+     *
      * @param string $name Raw method name
      * @return string Normalized method name
      */
@@ -46,7 +46,7 @@ class Normalizer
 
     /**
      * Get machine name from class/method/...
-     * 
+     *
      * @param string $raw Raw string
      * @return string Machine name
      */

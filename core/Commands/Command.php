@@ -24,7 +24,7 @@ class Command extends BaseCommand
 
     /**
      * Create a new custom command.
-     * 
+     *
      * @param string $command Command name
      */
     public function create(string $command)
@@ -51,7 +51,7 @@ class Command extends BaseCommand
 
     /**
      * Delete a custom command.
-     * 
+     *
      * @param string $command Command name
      */
     public function delete(string $command)

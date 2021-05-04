@@ -10,7 +10,7 @@ class Custom
 
     /**
      * Check if resource path exists before create it.
-     * 
+     *
      * @return bool If exists or created
      */
     public static function mkdirResource()
@@ -20,7 +20,7 @@ class Custom
 
     /**
      * Check if commands path exists before create it.
-     * 
+     *
      * @return bool If exists or created
      */
     public static function mkdirCommand()
@@ -30,7 +30,7 @@ class Custom
 
     /**
      * Check if a path exists before create it.
-     * 
+     *
      * @param string $path Path to check or create.
      * @return bool If exists or created
      */

@@ -2,7 +2,7 @@
 
 /**
  * Simple dump and die function.
- * 
+ *
  * @param mixed ...$params Anything
  */
 function dd(...$params)
@@ -16,7 +16,7 @@ function dd(...$params)
 
 /**
  * Get config from config.json file
- * 
+ *
  * @param string|array $path Use "foo", "foo.bar" or ["foo", "bar"]
  * @param mixed [$default=null] Default value if attribute is not found
  * @return mixed Config value from config.json
@@ -38,7 +38,7 @@ function config($path, $default = null)
 
 /**
  * Check if environment is in debug mode.
- * 
+ *
  * @return bool Debug status
  */
 function debug(): bool
@@ -48,7 +48,7 @@ function debug(): bool
 
 /**
  * Load a json file and decode it.
- * 
+ *
  * @param string $path File path
  * @return stdClass
  */
@@ -59,7 +59,7 @@ function jsonLoad(string $path): stdClass
 
 /**
  * Save object to json file.
- * 
+ *
  * @param string $path Path to json file
  * @param stdClass $data Data to save
  * @return bool Success on save
@@ -71,7 +71,7 @@ function jsonSave(string $path, stdClass $data): bool
 
 /**
  * Merge two object into new one.
- * 
+ *
  * @param stdClass $obj1 First object
  * @param stdClass $obj2 Second object
  * @return stdClass New merged object
@@ -85,7 +85,7 @@ function jsonMerge(stdClass $obj1, stdClass $obj2): stdClass
 
 /**
  * Merge two arrays recursively on distinct indexes.
- * 
+ *
  * @param array $array1 First array
  * @param array $array2 Second array
  * @return array New merged array

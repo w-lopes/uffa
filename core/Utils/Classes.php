@@ -16,7 +16,7 @@ class Classes
 
     /**
      * Get first line of a class doc string.
-     * 
+     *
      * @param string $class Class name with namespace
      * @return string First Line of doc string
      */
@@ -29,7 +29,7 @@ class Classes
 
     /**
      * Get an array of public non magic methods of a class.
-     * 
+     *
      * @param $string $class Class name with namespace
      * @return string[] All public method
      */
@@ -49,7 +49,7 @@ class Classes
 
     /**
      * Get first line of a method doc string.
-     * 
+     *
      * @param string $class Class name with namespace
      * @param string $method Method name
      * @return string First line of doc string
@@ -63,7 +63,7 @@ class Classes
 
     /**
      * Get all parameters with its documentation and type.
-     * 
+     *
      * @param string $class Class name with namespace
      * @param string $method Method name
      * @return stdClass[] Array of parameters object
@@ -82,7 +82,7 @@ class Classes
 
     /**
      * Parse parameter attributes.
-     * 
+     *
      * @param ReflectionParameter $parameter Parameter to parse
      * @return stdClass Parameter's attributes
      */

@@ -12,7 +12,7 @@ class Route
 
     /**
      * Fetch all routes from resources.
-     * 
+     *
      * @return array Parsed routes
      */
     public static function fetch(): array
@@ -22,7 +22,7 @@ class Route
 
     /**
      * Iterate from all resources to fetch its route.
-     * 
+     *
      * @return array Parsed routes
      */
     private static function iterateResource()
@@ -31,7 +31,7 @@ class Route
         $namespace = "\\custom\\Resources\\";
 
         foreach (new \DirectoryIterator(PATH_CUSTOM_RESOURCES) as $class) {
-            if(!$class->isFile()) {
+            if (!$class->isFile()) {
                 continue;
             }
 
@@ -48,7 +48,7 @@ class Route
 
     /**
      * Get base resource's base path.
-     * 
+     *
      * @param ReflectionClass $reflection Reflection of resource class
      * @return string Base path
      */
@@ -64,7 +64,7 @@ class Route
 
     /**
      * Get route from each resource method.
-     * 
+     *
      * @param string $base Resource base path
      * @param ReflectionClass $reflection Reflection of resource
      * @return array Fetched recource method routes
@@ -80,7 +80,6 @@ class Route
 
             $attributes = $method->getAttributes();
             foreach ($attributes as $attribute) {
-
                 $arguments      = $attribute->getArguments();
                 $route          = "api{$base}{$arguments["uri"]}";
                 $routes[$route] = [

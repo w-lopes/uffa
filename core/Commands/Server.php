@@ -12,7 +12,7 @@ class Server extends Command
 
     /**
      * Start a development server.
-     * 
+     *
      * @param string $host Listener host
      * @param int $port Port to start the server
      */

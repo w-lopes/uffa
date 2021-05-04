@@ -24,7 +24,7 @@ class Resource extends BaseCommand
 
     /**
      * Create a new custom resource.
-     * 
+     *
      * @param string $resource Resource name
      */
     public function create(string $resource)
@@ -52,7 +52,7 @@ class Resource extends BaseCommand
 
     /**
      * Delete a custom resource.
-     * 
+     *
      * @param string $resource Resource name
      */
     public function delete(string $resource)

@@ -33,7 +33,7 @@ abstract class Command
 
     /**
      * Display a info message.
-     * 
+     *
      * @param string $text Text message
      */
     public static function info(string $text)
@@ -43,7 +43,7 @@ abstract class Command
 
     /**
      * Display a success message.
-     * 
+     *
      * @param string $text Text message
      */
     public static function success(string $text)
@@ -53,7 +53,7 @@ abstract class Command
 
     /**
      * Display a warning message.
-     * 
+     *
      * @param string $text Text message
      */
     public static function warn(string $text)
@@ -63,7 +63,7 @@ abstract class Command
 
     /**
      * Wait for user's input.
-     * 
+     *
      * @param string $text Text message
      * @return string User's input
      */
@@ -76,7 +76,7 @@ abstract class Command
 
     /**
      * Display a error message.
-     * 
+     *
      * @param string $text Text message
      */
     public static function error(string $text, bool $exitAfter = false)
@@ -90,7 +90,7 @@ abstract class Command
 
     /**
      * Parse message before print it.
-     * 
+     *
      * @param string $text Text message
      * @param string $color Text color
      */
@@ -101,7 +101,7 @@ abstract class Command
 
     /**
      * Check if directory is empty then remove it.
-     * 
+     *
      * @param string $path Path to check
      * @return bool If is was deleted
      */
