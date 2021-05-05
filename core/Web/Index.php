@@ -36,7 +36,7 @@ class Index
     {
         $fetched = Route::fetch();
         $fetched; // Used inside template only
-        include PATH_TEMPLATES . "Doc";
+        include PATH_TEMPLATES . "Doc.uffa";
         exit;
     }
 

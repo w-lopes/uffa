@@ -17,7 +17,7 @@ class Template
      */
     public static function parse(string $template, array $data = [])
     {
-        $content = file_get_contents(PATH_TEMPLATES . $template);
+        $content = file_get_contents(PATH_TEMPLATES . "{$template}.uffa");
         foreach ($data as $k => $v) {
             $content = str_replace("{\${$k}}", $v, $content);
         }
