@@ -16,6 +16,7 @@ CLI Help:
 
 API Doc:
 ```bash
+# Start WEB server
 ./uffa server #default is http://localhost:8080
+# Open in your browser: http://localhost:8080/doc
 ```
-http://localhost:8080/doc
