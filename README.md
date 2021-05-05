@@ -5,7 +5,7 @@
 
 ### Start a new project
 
-Remove `/custom` from `.gitignore ` in a real project, everything will be created there! :)
+Remove `/custom` from `.gitignore` in a real project, everything will be created there! :)
 
 Grant permission to execute main script:
 ```bash
