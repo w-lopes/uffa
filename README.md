@@ -20,19 +20,20 @@ Need some help?
 ## Config file
 
 Uffa uses `json` format to configure a project (Why not?).
+
 To generate a new config file based on example just run the following command:
 ```bash
 ./uffa config:import
 ```
-It can be used always have new attributes on .example.json file as config file is ignored on git (you won't lose you current config attributes \o/).
+It can be used to merge new attributes from .example.json file to config.json.
 
-The reverse way can also be done. With the command below, the .example.json file is updated with the new attributes of local config (no, you won't lose previous attributes of .example.json file).
+The reverse way can also be done. Using the command below, the .example.json file is updated with the new attributes from local config.
 ```bash
 ./uffa config:export
 ```
 
 ## API Documentation
-If you already created any resource, you can open and read its generated documentation using your http server (like apache) or run it on dev mode:
+If you already created any `resource`, you can open and read its generated documentation using your http server (like apache) or run it on dev mode:
 ```bash
 ./uffa server # default is http://localhost:8080
 ```
