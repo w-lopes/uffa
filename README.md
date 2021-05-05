@@ -12,7 +12,7 @@ Grant permission to execute main script:
 chmod +x uffa
 ```
 
-Want some help with all commands?
+Need some help?
 ```bash
 ./uffa help
 ```
