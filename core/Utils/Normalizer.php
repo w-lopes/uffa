@@ -11,7 +11,7 @@ class Normalizer
     /**
      * @var string Pattern to split class/method name
      */
-    const PREG_SPLIT = "/[^a-zA-Z0-9]/";
+    public const PREG_SPLIT = "/[^a-zA-Z0-9]/";
 
     /**
      * Normalize class name.

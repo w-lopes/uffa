@@ -15,7 +15,7 @@ class Help extends Command
     /**
      * @var int Max size that command will be displayed.
      */
-    const LINE_PAD = 60;
+    protected const LINE_PAD = 60;
 
     /**
      * Display all available commands.
@@ -90,7 +90,7 @@ class Help extends Command
             if (!$class->isFile()) {
                 continue;
             }
-    
+
             $classes[] = $prefix . str_replace(".php", "", $class->getFilename());
         }
 

@@ -11,8 +11,15 @@ use core\Utils\Template;
 class Config extends BaseCommand
 {
 
-    const FILE    = PATH_BASE . "config.json";
-    const EXAMPLE = PATH_BASE . "config.example.json";
+    /**
+     * @var string Path to config file
+     */
+    public const FILE = PATH_BASE . "config.json";
+
+    /**
+     * @var string Path to example config file
+     */
+    public const EXAMPLE = PATH_BASE . "config.example.json";
 
     /**
      * Save new attributes from config.json to config.example.json using current values.

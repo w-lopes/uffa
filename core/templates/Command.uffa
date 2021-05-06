@@ -2,12 +2,12 @@
 
 namespace custom\Commands;
 
-use core\Bases\Command as BaseCommand;
+use core\Bases\Command;
 
 /**
  * {$name}.
  */
-class {$name} extends BaseCommand
+class {$name} extends Command
 {
 
     /**

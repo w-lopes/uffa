@@ -8,10 +8,25 @@ namespace core\Bases;
 abstract class Command
 {
 
-    const YELLOW  = "\e[93m";
-    const RED     = "\e[91m";
-    const GREEN   = "\e[92m";
-    const DEFAULT = "\e[0m";
+    /**
+     * @var string Code to bash yellow color
+     */
+    public const YELLOW = "\e[93m";
+
+    /**
+     * @var string Code to bash red color
+     */
+    public const RED = "\e[91m";
+
+    /**
+     * @var string Code to bash green color
+     */
+    public const GREEN = "\e[92m";
+
+    /**
+     * @var string Code to bash default color
+     */
+    public const DEFAULT = "\e[0m";
 
     /**
      * Construtor.
