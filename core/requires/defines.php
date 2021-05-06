@@ -1,7 +1,7 @@
 <?php
 
 // Shortened
-define("CLI", php_sapi_name() === 'cli');
+define("CLI", php_sapi_name() === "cli");
 define("EOL", CLI ? PHP_EOL : "<br/>");
 define("DS", DIRECTORY_SEPARATOR);
 

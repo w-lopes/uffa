@@ -23,7 +23,7 @@ class Response
      */
     public static function send($data): void
     {
-        header('Content-Type: application/json');
+        header("Content-Type: application/json");
         echo json_encode([
             "data"  => $data,
             "error" => null
@@ -39,7 +39,7 @@ class Response
      */
     public static function error(string $message = "Not found", int $code = 404): void
     {
-        header('Content-Type: application/json');
+        header("Content-Type: application/json");
         http_response_code($code);
         $response = [
             "data"  => null,

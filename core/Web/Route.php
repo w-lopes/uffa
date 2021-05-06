@@ -100,7 +100,6 @@ class Route
         $props = $reflection->getProperties();
 
         foreach ($props as $prop) {
-
             $attributes = $prop->getAttributes();
             foreach ($attributes as $attribute) {
                 $arguments = $attribute->getArguments();
