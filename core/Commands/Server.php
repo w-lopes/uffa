@@ -18,6 +18,6 @@ class Server extends Command
      */
     public function run(string $host = "0.0.0.0", int $port = 8080)
     {
-        system("php -S {$host}:{$port} -t " . PATH_PUBLIC);
+        pcntl_exec(PHP_BINARY, ["-S", "{$host}:{$port}", "-t", PATH_PUBLIC]);
     }
 }
