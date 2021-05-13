@@ -98,6 +98,12 @@ class Route
         return $routes;
     }
 
+    /**
+     * Fetch attrbiutes from resource API.
+     * 
+     * @param ReflectionClass $reflection Resouce reflection
+     * @return string[]
+     */
     private static function getApiProperties(ReflectionClass $reflection): array
     {
         $ret   = [];
@@ -110,7 +116,6 @@ class Route
                 $ret[$prop->getName()] = $arguments;
             }
         }
-
         return $ret;
     }
 }
