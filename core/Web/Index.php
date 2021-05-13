@@ -3,22 +3,33 @@
 namespace core\Web;
 
 use core\Utils\Normalizer;
-use Exception;
-use ReflectionClass;
+use core\Bases\Resource;
 
+/**
+ * Handle requests received on index.php file.
+ */
 class Index
 {
-
+    /**
+     * @var string[] URI splitted by slash.
+     */
     public $uri = [];
 
+    /**
+     * @var Resource Resource loaded.
+     */
     public $resource;
 
+    /**
+     * @var string Method to be called inside Index class.
+     */
     public $method = "";
 
-    public $reflection;
-
-    public $attributes = [];
-
+    /**
+     * Constructor.
+     * 
+     * @param string $uri Request URI
+     */
     public function __construct($uri)
     {
         $this->uri      = explode("/", trim($uri ?? "", "/"));
@@ -32,6 +43,9 @@ class Index
         $this->{$this->method}();
     }
 
+    /**
+     * Display API documentation.
+     */
     public function doc()
     {
         $fetched = Route::fetch();
@@ -40,6 +54,9 @@ class Index
         exit;
     }
 
+    /**
+     * Process API request.
+     */
     public function api()
     {
         dd("TODO", "api", $this->uri);
