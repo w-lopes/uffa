@@ -30,6 +30,10 @@ class Route
         $result    = [];
         $namespace = "\\custom\\Resources\\";
 
+        if (!is_dir(PATH_CUSTOM_RESOURCES)) {
+            Response::error("Resources not found");
+        }
+
         foreach (new \DirectoryIterator(PATH_CUSTOM_RESOURCES) as $class) {
             if (!$class->isFile()) {
                 continue;
