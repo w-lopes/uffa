@@ -4,6 +4,7 @@ namespace core\Web;
 
 use core\Utils\Normalizer;
 use core\Bases\Resource;
+use Exception;
 
 /**
  * Handle requests received on index.php file.
@@ -27,7 +28,7 @@ class Index
 
     /**
      * Constructor.
-     * 
+     *
      * @param string $uri Request URI
      */
     public function __construct($uri)
@@ -39,8 +40,6 @@ class Index
         if (!method_exists($this, $this->method)) {
             Response::notFound();
         }
-
-        $this->{$this->method}();
     }
 
     /**
@@ -59,6 +58,12 @@ class Index
      */
     public function api()
     {
-        dd("TODO", "api", $this->uri);
+        $resouceName = "\\custom\\Resources\\{$this->resource}";
+        try {
+            $resource = new $resouceName();
+        } catch (Exception) {
+            Response::error();
+        }
+        (new Api($resource, $this->uri))->execute();
     }
 }
