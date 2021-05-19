@@ -3,7 +3,6 @@
 /**
  * Starts its core.
  */
-
 call_user_func(function () {
     $herePath = dirname(__FILE__);
     $ds       = DIRECTORY_SEPARATOR;
