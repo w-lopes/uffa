@@ -13,19 +13,21 @@ class Route
     /**
      * Fetch all routes from resources.
      *
+     * @param string $method HTTP method to filter by
      * @return array Parsed routes
      */
-    public static function fetch(): array
+    public static function fetch(string $method = null): array
     {
-        return self::iterateResource();
+        return self::iterateResource($method);
     }
 
     /**
      * Iterate from all resources to fetch its route.
      *
+     * @param string $method HTTP method to filter by
      * @return array Parsed routes
      */
-    private static function iterateResource()
+    private static function iterateResource(string $method = null)
     {
         $result    = [];
         $namespace = "\\custom\\Resources\\";
@@ -42,7 +44,7 @@ class Route
             $current    = $namespace . str_replace(".php", "", $class->getFilename());
             $reflection = new ReflectionClass($current);
             $base       = self::getBaseRoute($reflection);
-            $parsed     = self::getMethodsRoute($base, $reflection)
+            $parsed     = self::getMethodsRoute($base, $reflection, $method)
                 + ["attributes" => self::getApiProperties($reflection)];
 
             $result[$base] = $parsed;
@@ -72,25 +74,31 @@ class Route
      *
      * @param string $base Resource base path
      * @param ReflectionClass $reflection Reflection of resource
+     * @param string $method HTTP method to filter by
      * @return array Fetched recource method routes
      */
-    private static function getMethodsRoute(string $base, ReflectionClass $reflection): array
+    private static function getMethodsRoute(string $base, ReflectionClass $reflection, string $method = null): array
     {
         $routes = [];
 
-        foreach ($reflection->getMethods() as $method) {
-            if (empty($method->getAttributes())) {
+        foreach ($reflection->getMethods() as $resouceMethod) {
+            if (empty($resouceMethod->getAttributes())) {
                 continue;
             }
 
-            $attributes = $method->getAttributes();
+            $attributes = $resouceMethod->getAttributes();
             foreach ($attributes as $attribute) {
-                $arguments      = $attribute->getArguments();
+                $arguments  = $attribute->getArguments();
+
+                if ($method && !in_array($method, $arguments["method"])) {
+                    continue;
+                }
+
                 $route          = "api{$base}{$arguments["uri"]}";
                 $routes[$route] = [
                     "http"   => $arguments["method"],
                     "class"  => $reflection->getName(),
-                    "method" => $method->getName()
+                    "method" => $resouceMethod->getName()
                 ];
             }
         }
