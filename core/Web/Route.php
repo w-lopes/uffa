@@ -108,7 +108,7 @@ class Route
 
     /**
      * Fetch attrbiutes from resource API.
-     * 
+     *
      * @param ReflectionClass $reflection Resouce reflection
      * @return string[]
      */
