@@ -25,6 +25,6 @@ If you discover a security vulnerability, please open an issue, or PR fixing it,
 ## License
 Open-sourced software licensed under the [WTFPL license](http://www.wtfpl.net/).
 
-## Documentawtion
+## Documentation
 
 [Take a look ;)](https://github.com/w-lopes/uffa/wiki/uffa)
