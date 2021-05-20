@@ -23,4 +23,4 @@ Open-sourced software licensed under the [WTFPL license](http://www.wtfpl.net/).
 
 ## Documentawtion
 
-[Take a look ;)](https://github.com/w-lopes/uffa/wiki)
+[Take a look ;)](https://github.com/w-lopes/uffa/wiki/uffa)
