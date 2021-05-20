@@ -15,6 +15,10 @@ It isn't about reinventing the wheel, but if something is simple, why whould you
  * Simples config file (a JSON! Why not?)
  * Fast! No unnecessary conditionals. If it isn't correct, it doesn't run. That simple :)
 
+## Purpose
+
+An easy and fastly way to create API and documentation fully based on source code. Even documentation page is auto generated based on classes/methods doc string, so everything you want is in a single place.
+
 ## Security
 If you discover a security vulnerability, please open an issue, or PR fixing it,... Follow your heart :)
 
